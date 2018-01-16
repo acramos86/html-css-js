@@ -12,9 +12,9 @@
 		var p_jupiter = 24.8;
 		var peso;
 		var peso_respuesta;
-		peso = prompt("Digite su peso en kilogramos ");
+		peso = parseInt(prompt("Digite su peso en kilogramos "));		
 		peso_respuesta = (peso * p_marte) / p_tierra;
-		alert (peso_respuesta);
+		document.write(peso_respuesta.toFixed(2));
 	</script>
 </body>
 </html>
