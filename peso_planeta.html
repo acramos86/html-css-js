@@ -10,17 +10,28 @@
 		var p_marte = 3.7;
 		var p_tierra = 9.8;
 		var p_jupiter = 24.8;
+		var planeta="";
 		var peso;
 		var peso_respuesta;
 		var condicion;
 		peso = parseFloat(prompt("Digite su peso en kilogramos "));
 		condicion = parseInt(prompt("Elija la opcion que desea\n.1 para saber su peso en Marte\n.2 para sabaer su peso en Jupiter"));
 		if (condicion==1) {			
-			peso_respuesta = (peso * p_marte) / p_tierra;			
-		}else{
-			peso_respuesta = (peso * p_jupiter) / p_tierra;			
+			peso_respuesta = (peso * p_marte) / p_tierra;
+			planeta = "Marte";			
 		}
-		document.write("Tu peso en Maarte es: <strong>"+peso_respuesta.toFixed(2)+" kilogramos</strong>");		
+		else if (condicion == 2){
+			peso_respuesta = (peso * p_jupiter) / p_tierra;
+			planeta = "Jupiter";
+		}
+		else{
+			alert("El valor ingresado no es valido");
+			peso_respuesta=1000000000;
+			planeta = "kripton";			
+		}
+
+		document.write("Tu peso en "+planeta+" es: <strong>"+peso_respuesta.toFixed(2)+" kilogramos</strong>");	
+
 	</script>
 </body>
 </html>
