@@ -4,7 +4,7 @@
 	<title>Peso en otro planeta</title>
 </head>
 <body>
-	<h1>Tu peso otro plaeta</h1>
+	<h1>Tu peso en otro plaeta</h1>
 	<p>En la tierra tenemos un peso difenrente que en Marte o jupiter</p>
 	<script type="text/javascript">
 		var p_marte = 3.7;
@@ -12,9 +12,15 @@
 		var p_jupiter = 24.8;
 		var peso;
 		var peso_respuesta;
-		peso = parseInt(prompt("Digite su peso en kilogramos "));		
-		peso_respuesta = (peso * p_marte) / p_tierra;
-		document.write(peso_respuesta.toFixed(2));
+		var condicion;
+		peso = parseFloat(prompt("Digite su peso en kilogramos "));
+		condicion = parseInt(prompt("Elija la opcion que desea\n.1 para saber su peso en Marte\n.2 para sabaer su peso en Jupiter"));
+		if (condicion==1) {			
+			peso_respuesta = (peso * p_marte) / p_tierra;			
+		}else{
+			peso_respuesta = (peso * p_jupiter) / p_tierra;			
+		}
+		document.write("Tu peso en Maarte es: <strong>"+peso_respuesta.toFixed(2)+" kilogramos</strong>");		
 	</script>
 </body>
 </html>
