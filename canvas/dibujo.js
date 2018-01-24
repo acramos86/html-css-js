@@ -1,5 +1,6 @@
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
+var l = 0;
 
 function trazarLinea(color, xinicial, yinicial, xfinal, yfinal){
 	lienzo.beginPath();
@@ -10,7 +11,14 @@ function trazarLinea(color, xinicial, yinicial, xfinal, yfinal){
 	lienzo.closePath();
 }
 
-trazarLinea("pink", 20, 80, 100, 400);
-trazarLinea("black", 100, 0, 180, 340);
-trazarLinea("red", 300, 300, 0, 0);
-trazarLinea("green", 20, 0, 20, 200);
+/*for (var i = 0; i < 300; i = i + 10 ) {
+	trazarLinea("blue", 0, i, (i+10), 300);
+	trazarLinea("blue", i, 0, 300, (i+10));
+}*/
+
+
+while(l<=300){
+	trazarLinea("black", 0, l, (l+10), 300);
+	trazarLinea("black", l, 0, 300, (l+10));
+	l = l + 10;
+}
