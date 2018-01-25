@@ -22,3 +22,9 @@ while(l<=300){
 	trazarLinea("black", l, 0, 300, (l+10));
 	l = l + 10;
 }
+
+trazarLinea("black", 0, 0, 0, 300);
+trazarLinea("black", 0, 300, 300, 300);
+trazarLinea("black", 0, 0, 300, 0);
+
+
