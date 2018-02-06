@@ -36,9 +36,81 @@ function dibujoPorClick(){
 
 dato_boton.addEventListener("click", dibujoPorClick );
 
-document.addEventListener("keydown", dibujoTeclado );
 
-function dibujoTeclado(){
-	alert("AAAHHHHHHHHHHH!!!!!");
+
+document.addEventListener("keyup", dibujoTeclado );
+
+var teclas = {
+	ARRIBA: 38,
+	ABAJO: 40,
+	IZQUIERDA: 37,
+	DERECHA: 39
+};
+
+console.log(teclas);
+
+var inicioX = 150;
+var inicioY = 150;
+var finX = 150;
+var finY = 150;
+var contador = 0;
+
+function dibujoTeclado(evento){
+	
+	if (contador == 0){
+		contador = contador + 1 ;
+
+		switch(evento.keyCode){				
+
+			case teclas.ARRIBA:
+				trazarLinea("black", inicioX, inicioY, finX, (finY = finY - 10));
+			break;
+
+			case teclas.ABAJO:
+				trazarLinea("black", inicioX, inicioY, finX, (finY = finY + 10));
+			break;
+
+			case teclas.IZQUIERDA:
+				trazarLinea("black", inicioX, inicioY, (finX = finx - 10), finY);
+			break;
+
+			case teclas.DERECHA:
+				trazarLinea("black", inicioX, inicioY, (finX = finx = 10), finY);
+			break;
+
+			default:
+				console.log("Necesito que estripe una flecha, esa no sirve");
+			break;
+
+		}
+		
+	}else{
+		switch(evento.keyCode){			
+
+			case teclas.ARRIBA:
+				trazarLinea("black", finX, finY, finX, (finY = finY - 10));
+			break;
+
+			case teclas.ABAJO:
+				trazarLinea("black", finX, finY, finX, (finY = finY + 10));
+			break;
+
+			case teclas.IZQUIERDA:
+				trazarLinea("black", finX, finY, (finX = finX - 10), finY);
+			break;
+
+			case teclas.DERECHA:
+				trazarLinea("black", finX, finY, (finX = finX + 10), finY);
+			break;
+
+			default:
+				console.log("Necesito que estripe una flecha, esa no sirve");
+			break;
+
+		}
+	}
+
+	
+
 }
 
