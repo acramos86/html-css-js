@@ -2,11 +2,24 @@
 <html>
 <head>
 	<title>Dibujando con canvas</title>
+	<style type="text/css">
+      canvas { 
+      	border: 1px solid black; 
+      }
+    </style>
 </head>
 <body>
 	<h1>Dibujo en canvas</h1>
+	<p>Cuantas lineas quieres<br>
+		<input type="text" name="" id="texto_lineas"/>
+		<input type="button" value="Peguele" name="" id="boton"/>
+	</p>
 	<canvas widt="300" height="300" id="dibujito"></canvas>
 	<p>Asi qeda mi dibujo</p>
+	<h1>Otro canvas por teclas</h1>
+	<canvas width="300" height="300" nid="dibujo_2"></canvas>
+	<p>Mueva las flechas en el teclado para dibujar</p>
 	<script type="text/javascript" src="dibujo.js"></script>
+	
 </body>
 </html>
